@@ -19,6 +19,9 @@
             android:name=".addspending.addSpendingActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
+            android:name=".settings.SettingsActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
             android:name=".test.my_layout_adapter"
             android:label="@string/title_activity_my_layout_adapter"
             android:theme="@style/AppTheme.NoActionBar" />

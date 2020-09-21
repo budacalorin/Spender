@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.dayplanner.other.Alarm;
 import com.example.dayplanner.other.Notification;
 import com.example.dayplanner.selectbudget.SelectDatabaseSpenderActivity;
+import com.example.dayplanner.settings.SettingsActivity;
 import com.example.dayplanner.test.TestActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,11 +19,12 @@ public class MainActivity extends AppCompatActivity {
     private Button notificationButton;
     private Button spenderButton;
     private Button testButton;
+    private Button settingsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout. activity_main);
+        setContentView(R.layout.activity_main);
 
         alarmButton= (Button)findViewById(R.id.setAlarmButton);
         alarmButton.setOnClickListener(new View.OnClickListener() {
@@ -56,7 +58,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        settingsButton = (Button) findViewById(R.id.settingsButton);
+        settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openSettings();
+            }
+        });
 
     }
 
@@ -81,6 +89,11 @@ public class MainActivity extends AppCompatActivity {
     public void openTestActivity()
     {
         Intent intent = new Intent(this, TestActivity.class);
+        startActivity(intent);
+    }
+
+    private void openSettings(){
+        Intent intent = new Intent(this, SettingsActivity.class);
         startActivity(intent);
     }
 

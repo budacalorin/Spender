@@ -43,6 +43,13 @@
         android:layout_marginTop="30sp"
         android:text="Test" />
 
+    <Button
+        android:id="@+id/settingsButton"
+        android:layout_width="169dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30sp"
+        android:layout_marginTop="30sp"
+        android:text="Settings" />
 
 
 </LinearLayout>
