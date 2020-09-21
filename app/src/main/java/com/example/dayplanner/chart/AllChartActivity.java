@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
@@ -74,8 +75,16 @@ public class AllChartActivity extends AppCompatActivity {
     private void initializePie() {
         updatePie(begin, end);
 
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            Color color = Color.valueOf(getColor(R.color.colorPrimaryDark));
+            String hexColor = String.format("#%06X", (0xFFFFFF & color.toArgb()));
+
+            pie.background().fill(hexColor, 0);
+
+            chartView.setBackgroundColor(hexColor);
+        }
+
         pie.title("All expenses");
-        pie.background().fill("#FFFFFF", 0);
         pie.fill("aquastyle");
         pie.sort("desc");
 //        pie.labels().position("outside");
@@ -94,7 +103,6 @@ public class AllChartActivity extends AppCompatActivity {
         });
 
         chartView.setChart(pie);
-        chartView.setBackgroundColor("#f3d945");
     }
 
     private void initializeDates() {

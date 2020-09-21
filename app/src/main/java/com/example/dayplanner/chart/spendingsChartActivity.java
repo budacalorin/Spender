@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -88,10 +89,20 @@ public class spendingsChartActivity extends AppCompatActivity {
 
         updateTotal(list);
 
-        pie.title(dbName);pie.background().fill("#FFFFFF", 0);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            Color color = Color.valueOf(getColor(R.color.colorPrimaryDark));
+            String hexColor = String.format("#%06X", (0xFFFFFF & color.toArgb()));
+
+            pie.background().fill(hexColor, 0);
+
+            anyChartView.setBackgroundColor(hexColor);
+        }
+
+
+        pie.title(dbName);
         pie.fill("aquastyle");
         pie.sort("desc");
-//        pie.labels().position("outside");
+//      pie.labels().position("outside");
         pie.labels().format("{%value}");
         pie.setOnClickListener(new ListenersInterface.OnClickListener(new String[]{"x", "value"}) {
             @Override
@@ -109,8 +120,6 @@ public class spendingsChartActivity extends AppCompatActivity {
         });
 
         anyChartView.setChart(pie);
-        anyChartView.setBackgroundColor("#f3d945");
-
     }
 
     private void initializeTextViews() {

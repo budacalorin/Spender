@@ -66,11 +66,11 @@ public class myAdapterSpender extends BaseAdapter {
         if (!selected.contains(new Long(position))) {
             v = mInflater.inflate(R.layout.my_layout_adapter, null);
 
-            Drawable drawable = ContextCompat.getDrawable(context, R.drawable.total_total_background);
+            Drawable drawable = ContextCompat.getDrawable(context, R.drawable.list_adapter_background);
             drawable.setTint(Color.RED);
 
             rel = v.findViewById(R.id.spendingRelativeLayout);
-            rel.setBackground(ContextCompat.getDrawable(context, R.drawable.total_total_background));
+            rel.setBackground(ContextCompat.getDrawable(context, R.drawable.list_adapter_background));
         } else {
             v = mInflater.inflate(R.layout.my_layout_adapter_details, null);
 
@@ -92,14 +92,21 @@ public class myAdapterSpender extends BaseAdapter {
         double val = list.get(position).value;
         boolean income = val > 0;
 
-        if (income) {
-            //rel.setBackgroundColor();
-            rel.getBackground().setTint(Color.argb(255,222,(val==0) ? 0 : 70+(int)(70.0*(val/maximIncome)),9));
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            Color color = Color.valueOf(context.getColor(R.color.colorListEntry));
+
+            if (income) {
+                float green = (val == 0) ? 0 : (float) (color.green() +(color.green() * (val / maximIncome)));
+                rel.getBackground().setTint(Color.argb(color.alpha(), color.red(), green, color.blue()));
+
+            }
+            else {
+
+                float red = (val==0) ? 0 : (float) (color.red() + (color.red() * (val / maximExpence)));
+                rel.getBackground().setTint(Color.argb(color.alpha(), red, color.green(), color.blue()));
+            }
         }
-        else {
-            //rel.setBackgroundColor(Color.argb(255,(val==0) ? 0 : 127+(int)(127.0*(val/maximExpence)),30,0));
-            rel.getBackground().setTint(Color.argb(255,(val==0) ? 0 : 127+(int)(127.0*(val/maximExpence)),30,0));
-        }
+
         return v;
     }
 
@@ -117,9 +124,9 @@ public class myAdapterSpender extends BaseAdapter {
         }
     }
 
-    private Drawable getBackgroundForPosition(int position, int size){
-        switch (position){
-
-        }
-    }
+//    private Drawable getBackgroundForPosition(int position, int size){
+//        switch (position){
+//
+//        }
+//    }
 }

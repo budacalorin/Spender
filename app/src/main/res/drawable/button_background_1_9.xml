@@ -2,8 +2,8 @@
 
     <corners android:radius="5dp" />
     <gradient
-        android:startColor="#de8c09"
-        android:endColor="#de8c09"
+        android:startColor="@color/colorForButtons"
+        android:endColor="@color/colorForButtons"
         android:angle="-90"/>
 
 
