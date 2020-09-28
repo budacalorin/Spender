@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 
 import com.example.dayplanner.R;
@@ -51,7 +52,7 @@ public class suggestionAdapter extends BaseAdapter {
         TextView usageTextView = (TextView) v.findViewById(R.id.usageTextView);
         usageTextView.setText(list.get(position).usage.toString());
 
-        RelativeLayout rel = (RelativeLayout) v.findViewById(R.id.sugggestionRelativeLayout);
+        ConstraintLayout rel = (ConstraintLayout) v.findViewById(R.id.sugggestionRelativeLayout);
 
 
         if (selected==position){

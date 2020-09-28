@@ -55,7 +55,7 @@ public class addSpendingActivity extends AppCompatActivity{
     suggestionAdapter itemAdapter;
     Context THIS;
     EditText detailsEditText;
-    TextView selectedDateTextView;
+    TextView selectedDateButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,12 +95,12 @@ public class addSpendingActivity extends AppCompatActivity{
 
         initialiseDb();
 
-        selectedDateTextView=(TextView) findViewById(R.id.selectedDateTextView);
+        selectedDateButton=(TextView) findViewById(R.id.selectedDateButton);
         String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
         currentDate=currentDate.replace('-','/').substring(0,6)+currentDate.charAt(8)+currentDate.charAt(9);
-        selectedDateTextView.setText(currentDate);
+        selectedDateButton.setText(currentDate);
 
-        selectedDateTextView.setOnClickListener(new View.OnClickListener() {
+        selectedDateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 changeDate();
@@ -200,7 +200,7 @@ public class addSpendingActivity extends AppCompatActivity{
         intent.putExtra("details",detailsEditText.getText().toString());
 
 
-        intent.putExtra("date",selectedDateTextView.getText().toString());
+        intent.putExtra("date",selectedDateButton.getText().toString());
         setResult(RESULT_OK,intent);
         finish();
     }
@@ -286,10 +286,10 @@ public class addSpendingActivity extends AppCompatActivity{
                 if (month<=9)
                     date+='0';
                 date=date+month+'/'+(year/10%10)+(year%10);
-                selectedDateTextView.setText(date);
+                selectedDateButton.setText(date);
             }
         });
-        newFragment.setDate(stringToDate(selectedDateTextView.getText().toString()));
+        newFragment.setDate(stringToDate(selectedDateButton.getText().toString()));
         newFragment.show(getSupportFragmentManager(),"datePicker");
     }
 }
