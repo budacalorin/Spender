@@ -41,4 +41,9 @@
         <item name="android:layout_width">0dp</item>
         <item name="layout_constraintWidth_default">percent</item>
     </style>
+    
+    <style name="NumPadButtons" parent="PercentageStyle">
+        <item name="layout_constraintHeight_percent">0.09</item>
+        <item name="layout_constraintWidth_percent">0.27</item>
+    </style>
 </resources>

@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dayplanner.chart.AllChartActivity;
 import com.example.dayplanner.db.budgets.BudgetNamesContract;
@@ -26,6 +27,8 @@ import com.example.dayplanner.spender.spender;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+
+import static com.example.dayplanner.UserAttentionKt.showToast;
 
 public class SelectDatabaseSpenderActivity extends AppCompatActivity {
 
@@ -105,8 +108,11 @@ public class SelectDatabaseSpenderActivity extends AppCompatActivity {
 
                 name=name.replaceAll(" ","");
 
-                if (name.isEmpty())
+                if (name.isEmpty()) {
+                    showToast(getApplicationContext(), R.string.alert_field_empty, Toast.LENGTH_LONG);
+                    addNewDbEditText.setHint("Enter name here!");
                     return;
+                }
 
                 itemInListDbNames item = new itemInListDbNames(name,(double)0,false);
 

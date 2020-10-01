@@ -3,4 +3,5 @@
     <string name="title_activity_m_spender">mSpender</string>
     <string name="title_activity_spender">spender</string>
     <string name="title_activity_my_layout_adapter">my_layout_adapter</string>
+    <string name="alert_field_empty">The field can\'t be empty!</string>
 </resources>

@@ -29,6 +29,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
+import static com.example.dayplanner.UserAttentionKt.showToast;
 import static com.example.dayplanner.utils.DateUtilsKt.stringToDate;
 
 public class addSpendingActivity extends AppCompatActivity{
@@ -79,7 +80,6 @@ public class addSpendingActivity extends AppCompatActivity{
 
         Resources res = getResources();
 
-
         itemAdapter = new suggestionAdapter(this,suggestionArray);
         suggestionList.setAdapter(itemAdapter);
 
@@ -91,7 +91,7 @@ public class addSpendingActivity extends AppCompatActivity{
             }
         });
 
-        updateButton(itemAdapter);
+        updateButtons(itemAdapter);
 
         initialiseDb();
 
@@ -127,7 +127,7 @@ public class addSpendingActivity extends AppCompatActivity{
         buttonB.setText("<");
     }
 
-    private void updateButton(final suggestionAdapter itemAdapter){
+    private void updateButtons(final suggestionAdapter itemAdapter){
 
         buttonB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,8 +139,11 @@ public class addSpendingActivity extends AppCompatActivity{
         newSourceBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (newSourceEditText.getText().length()==0)
+                if (newSourceEditText.getText().length()==0) {
+                    showToast(getApplicationContext(), R.string.alert_field_empty, Toast.LENGTH_LONG);
+                    newSourceEditText.setHint("Enter name here!");
                     return;
+                }
                 String s  = new String();
                 s = newSourceEditText.getText().toString();
                 int usage = 0;
@@ -157,7 +160,10 @@ public class addSpendingActivity extends AppCompatActivity{
         expenceBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (itemAdapter.selected<0) return;
+                if (itemAdapter.selected<0){
+                    showToast(getApplicationContext(), "You must select a source!", Toast.LENGTH_LONG);
+                    return;
+                }
                 total=-total;
                 endSesion();
             }
@@ -165,8 +171,10 @@ public class addSpendingActivity extends AppCompatActivity{
         incomeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (itemAdapter.selected<0) return;
-
+                if (itemAdapter.selected<0) {
+                    showToast(getApplicationContext(), "You must select a source!", Toast.LENGTH_LONG);
+                    return;
+                }
                 endSesion();
             }
         });
@@ -181,8 +189,8 @@ public class addSpendingActivity extends AppCompatActivity{
                 String[] argv = { w };
                 String where = "_ID LIKE ?";
                 Integer nr = db.delete(SuggestionsContract.Suggestion.TABLE_NAME,where, argv);
-                Toast.makeText(THIS,nr+"",Toast.LENGTH_LONG).show();
-                //db.rawQuery("DELETE FROM " + SpenderItemsContract.SpenderItem.TABLE_NAME + " WHERE ID = " + w,null);
+
+                showToast(getApplicationContext(), "\"" + suggestionArray.get(position).name + "\" was removed!", Toast.LENGTH_LONG);
 
 
                 suggestionArray.remove(position);
