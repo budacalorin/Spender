@@ -7,11 +7,9 @@ import android.app.DatePickerDialog;
 import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
-import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,16 +21,13 @@ import com.anychart.chart.common.listener.Event;
 import com.anychart.chart.common.listener.ListenersInterface;
 import com.anychart.charts.Pie;
 import com.edmodo.rangebar.RangeBar;
-import com.example.dayplanner.DatePickerFragment;
+import com.example.dayplanner.utils.DatePickerFragment;
 import com.example.dayplanner.R;
 import com.example.dayplanner.db.spender.SpenderItemsContract;
-import com.example.dayplanner.utils.DateUtilsKt;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 
 import static com.example.dayplanner.chart.SliceInfoAlertDialogKt.getSliceInfoAlertDialog;
 import static com.example.dayplanner.utils.DataBaseUtilsKt.dataToHashMap;

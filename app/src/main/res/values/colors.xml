@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimary">#2a374d</color>
     <color name="colorPrimaryDarkGradient">#757575</color>
     <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#000000</color>
+    <color name="colorAccent">#151b26</color>
     <color name="textColor">#FFFFFF</color>
-    <color name="selected">#FFFFFF</color>
-    <color name="colorForButtons">#FF9200</color>
-    <color name="colorListEntry">#FF9200</color>
+    <color name="selected">#7e728a</color>
+    <color name="colorForButtons">#9791a0</color>
+    <color name="colorForButtonsGradient">#9791a0</color>
+    <color name="colorForButtonsSecundary">#7d7c84</color>
+    <color name="colorForButtonsGradientSecundary">#7d7c84</color>
+    <color name="colorListEntry">#7e728a</color>
+    <color name="colorForWidgets">#7e728a</color>
+    <color name="colorForWidgetsGradient">#7e728a</color>
+    <color name="colorForLists">#227e728a</color>
+    <color name="colorForListsGradient">#227e728a</color>
 </resources>

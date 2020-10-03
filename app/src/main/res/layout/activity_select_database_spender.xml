@@ -33,7 +33,7 @@
             android:id="@+id/chartButtonSpender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/total_total_background"
+            android:background="@drawable/gradient_background_buttons"
             android:text="Chart"
             android:textColor="@color/textColor"
             app:layout_constraintBottom_toBottomOf="@+id/budgetsTextView"
@@ -75,10 +75,19 @@
             app:layout_constraintWidth_percent="0.5"
             app:layout_constraintHeight_percent="0.06"/>
 
+        <com.example.dayplanner.utils.DynamicListView
+            android:id="@+id/dbNamesList"
+            style="@style/PercentageStyle"
+            android:background="@drawable/gradient_background_lists"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHeight_percent="0.94"
+            app:layout_constraintWidth_percent="0.9" />
+
         <ImageView
             android:id="@+id/side_bars_database_select"
-            style="@style/PercentageStyleHeight"
-            android:layout_width="match_parent"
+            style="@style/PercentageStyle"
             android:alpha="0"
             android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="@+id/dbNamesList"
@@ -86,22 +95,8 @@
             app:layout_constraintTop_toTopOf="@+id/dbNamesList"
             app:layout_constraintEnd_toEndOf="@+id/dbNamesList"
             app:layout_constraintHeight_percent="0.94"
+            app:layout_constraintWidth_percent="0.90"
             app:srcCompat="@drawable/side_bars" />
-
-        <com.example.dayplanner.DynamicListView
-            android:id="@+id/dbNamesList"
-            style="@style/PercentageStyleHeight"
-            android:layout_width="match_parent"
-            android:background="@android:color/transparent"
-            android:divider="@null"
-            android:dividerHeight="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHeight_percent="0.94" >
-
-
-        </com.example.dayplanner.DynamicListView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -135,7 +130,7 @@
             android:id="@+id/addNewDbButton"
             android:layout_width="wrap_content"
             style="@style/PercentageStyleHeight"
-            android:background="@drawable/total_total_background"
+            android:background="@drawable/gradient_background_buttons_secundary"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:text="New Budget"

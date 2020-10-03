@@ -49,7 +49,7 @@ public class DbNamesAdapter extends BaseAdapter {
         TextView valueTextView = (TextView) v.findViewById(R.id.valueTextViewDbNames);
         valueTextView.setText(namesList.get(position).value.toString());
 
-        //valueTextView.setBackgroundResource(R.drawable.total_total_background);
+        //valueTextView.setBackgroundResource(R.drawable.gradient_background_buttons);
         return v;
     }
 

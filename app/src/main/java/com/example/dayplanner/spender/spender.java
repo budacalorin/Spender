@@ -27,9 +27,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.dayplanner.db.budgets.BudgetNamesContract;
 import com.example.dayplanner.db.budgets.BudgetNamesDbHelper;
-import com.example.dayplanner.DatePickerFragment;
-import com.example.dayplanner.DbUpdater;
-import com.example.dayplanner.DynamicListView;
+import com.example.dayplanner.utils.DatePickerFragment;
+import com.example.dayplanner.utils.DbUpdater;
+import com.example.dayplanner.utils.DynamicListView;
 import com.example.dayplanner.R;
 import com.example.dayplanner.db.spender.SpenderItemsContract;
 import com.example.dayplanner.db.spender.SpenderItemsDbHelper;
@@ -280,6 +280,13 @@ public class spender extends AppCompatActivity {
                     itemAdapter.notifyDataSetChanged();
                     updateTotal();
                 }
+            }
+        });
+
+        list.post(new Runnable() {
+            @Override
+            public void run() {
+                list.setSelection(list.getCount() - 1);
             }
         });
 

@@ -5,20 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient"
-    tools:context=".MainActivity">
+    tools:context=".main.MainActivity">
 
-    <com.example.dayplanner.DynamicListView
+    <com.example.dayplanner.utils.DynamicListView
         android:id="@+id/listView"
         style="@style/PercentageStyle"
         app:layout_constraintWidth_percent="0.9"
         app:layout_constraintHeight_percent="0.73"
         android:layout_marginTop="52dp"
-        android:background="@android:color/transparent"
+        android:background="@drawable/gradient_background_lists"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/budgetNameTextView">
-
-    </com.example.dayplanner.DynamicListView>
+        app:layout_constraintTop_toBottomOf="@+id/budgetNameTextView"/>
 
     <ImageView
         android:id="@+id/side_bars_spender"
@@ -35,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginBottom="48dp"
-        android:background="@drawable/total_total_background"
+        android:background="@drawable/gradient_background_buttons_secundary"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:text="ADD NEW SOURCE"
@@ -99,7 +97,7 @@
         android:id="@+id/chartButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/total_total_background"
+        android:background="@drawable/gradient_background_buttons"
         android:text="Chart"
         android:textColor="@color/textColor"
         app:layout_constraintBottom_toBottomOf="@+id/budgetNameTextView"
@@ -140,7 +138,7 @@
         android:layout_marginEnd="17dp"
         android:layout_marginBottom="50dp"
         android:textColor="@color/textColor"
-        android:background="@drawable/total_total_background"
+        android:background="@drawable/gradient_background_buttons_secundary"
         android:text="Generate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

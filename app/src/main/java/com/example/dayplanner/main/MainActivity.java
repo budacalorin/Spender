@@ -1,4 +1,4 @@
-package com.example.dayplanner;
+package com.example.dayplanner.main;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.dayplanner.R;
 import com.example.dayplanner.other.Alarm;
 import com.example.dayplanner.other.Notification;
 import com.example.dayplanner.selectbudget.SelectDatabaseSpenderActivity;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.dayplanner;
+package com.example.dayplanner.utils;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -29,10 +29,8 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
-import android.text.Layout;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -40,18 +38,14 @@ import android.view.animation.OvershootInterpolator;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 
-import com.anychart.core.Base;
+import com.example.dayplanner.utils.DbUpdater;
 
 import java.util.ArrayList;
-
-import dalvik.system.BaseDexClassLoader;
 
 /**
  * The dynamic listview is an extension of listview that supports cell dragging

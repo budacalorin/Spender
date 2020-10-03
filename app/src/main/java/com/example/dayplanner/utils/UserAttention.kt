@@ -1,4 +1,4 @@
-package com.example.dayplanner
+package com.example.dayplanner.utils
 
 import android.content.Context
 import android.widget.Toast

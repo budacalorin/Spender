@@ -3,14 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/spendingRelativeLayout"
-    android:background="@color/colorPrimaryDark">
+    android:background="@drawable/list_adapter_background">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="0dp"
-        android:layout_marginRight="0dp"
         android:layout_toStartOf="@+id/valueTextView"
         android:layout_toLeftOf="@+id/valueTextView"
         android:gravity="center"
@@ -28,7 +26,6 @@
         android:text="1000000.0"
         android:textColor="@color/textColor"
         android:textSize="20sp" />
-
 
     <TextView
         android:id="@+id/dateTextView"

@@ -1,4 +1,4 @@
-package com.example.dayplanner;
+package com.example.dayplanner.utils;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;

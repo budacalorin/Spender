@@ -19,7 +19,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.dayplanner.DatePickerFragment;
+import com.example.dayplanner.utils.DatePickerFragment;
 import com.example.dayplanner.R;
 import com.example.dayplanner.db.addspending.SuggestionsContract;
 import com.example.dayplanner.db.addspending.SuggestionsDbHelper;
@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
-import static com.example.dayplanner.UserAttentionKt.showToast;
+import static com.example.dayplanner.utils.UserAttentionKt.showToast;
 import static com.example.dayplanner.utils.DateUtilsKt.stringToDate;
 
 public class addSpendingActivity extends AppCompatActivity{
@@ -106,7 +106,6 @@ public class addSpendingActivity extends AppCompatActivity{
                 changeDate();
             }
         });
-
     }
 
     private void setupButtons(){
@@ -155,6 +154,13 @@ public class addSpendingActivity extends AppCompatActivity{
                     itemAdapter.selected=suggestionArray.size()-1;
                 }
                 itemAdapter.notifyDataSetChanged();
+
+                suggestionList.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        suggestionList.setSelection(suggestionList.getCount() - 1);
+                    }
+                });
             }
         });
         expenceBtn.setOnClickListener(new View.OnClickListener() {

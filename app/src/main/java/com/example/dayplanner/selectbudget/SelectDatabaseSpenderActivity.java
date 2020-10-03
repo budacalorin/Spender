@@ -18,17 +18,16 @@ import android.widget.Toast;
 import com.example.dayplanner.chart.AllChartActivity;
 import com.example.dayplanner.db.budgets.BudgetNamesContract;
 import com.example.dayplanner.db.budgets.BudgetNamesDbHelper;
-import com.example.dayplanner.DbUpdater;
-import com.example.dayplanner.DynamicListView;
+import com.example.dayplanner.utils.DbUpdater;
+import com.example.dayplanner.utils.DynamicListView;
 import com.example.dayplanner.R;
 import com.example.dayplanner.db.spender.SpenderItemsContract;
 import com.example.dayplanner.db.spender.SpenderItemsDbHelper;
 import com.example.dayplanner.spender.spender;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
-import static com.example.dayplanner.UserAttentionKt.showToast;
+import static com.example.dayplanner.utils.UserAttentionKt.showToast;
 
 public class SelectDatabaseSpenderActivity extends AppCompatActivity {
 

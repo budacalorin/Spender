@@ -21,7 +21,7 @@ import com.anychart.chart.common.listener.Event;
 import com.anychart.chart.common.listener.ListenersInterface;
 import com.anychart.charts.Pie;
 import com.edmodo.rangebar.RangeBar;
-import com.example.dayplanner.DatePickerFragment;
+import com.example.dayplanner.utils.DatePickerFragment;
 import com.example.dayplanner.R;
 import com.example.dayplanner.db.spender.SpenderItemsContract;
 

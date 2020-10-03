@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -60,7 +59,7 @@ public class suggestionAdapter extends BaseAdapter {
 
         }
         else{
-            rel.setBackground(ContextCompat.getDrawable(context,R.drawable.total_total_background));
+            rel.setBackground(ContextCompat.getDrawable(context,R.drawable.gradient_background_buttons));
 
         }
         return v;

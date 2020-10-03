@@ -96,17 +96,14 @@ public class myAdapterSpender extends BaseAdapter {
             Color color = Color.valueOf(context.getColor(R.color.colorListEntry));
 
             if (income) {
-                float green = (val == 0) ? 0 : (float) (color.green() +(color.green() * (val / maximIncome)));
+                float green = (val == 0) ? 0 : (float) (color.green() + (color.green() * (val / maximIncome)));
                 rel.getBackground().setTint(Color.argb(color.alpha(), color.red(), green, color.blue()));
-
             }
             else {
-
                 float red = (val==0) ? 0 : (float) (color.red() + (color.red() * (val / maximExpence)));
                 rel.getBackground().setTint(Color.argb(color.alpha(), red, color.green(), color.blue()));
             }
         }
-
         return v;
     }
 
