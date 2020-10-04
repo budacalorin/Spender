@@ -45,57 +45,60 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        style="@style/PercentageStyleHeight"
-        android:layout_width="match_parent"
+        style="@style/PercentageStyle"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.9"
         app:layout_constraintHeight_percent="0.7"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
 
         <TextView
             android:id="@+id/nameTextViewDbSelector"
             style="@style/PercentageStyle"
-            android:gravity="center"
+            android:gravity="start|center_vertical"
+            android:paddingStart="10dp"
             android:text="Name"
             android:textColor="@color/textColor"
             android:textSize="20sp"
+            app:layout_constraintHeight_percent="0.06"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.5"
-            app:layout_constraintHeight_percent="0.06"/>
+            app:layout_constraintWidth_percent="0.5" />
 
         <TextView
             android:id="@+id/valueTextViewDbSelector"
             style="@style/PercentageStyle"
-            android:gravity="center"
+            android:gravity="end|center_vertical"
+            android:paddingEnd="10dp"
             android:text="Amount"
             android:textColor="@color/textColor"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.06"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.5"
-            app:layout_constraintHeight_percent="0.06"/>
+            app:layout_constraintWidth_percent="0.5" />
 
         <com.example.dayplanner.utils.DynamicListView
             android:id="@+id/dbNamesList"
-            style="@style/PercentageStyle"
+            style="@style/PercentageStyleHeight"
+            android:layout_width="match_parent"
             android:background="@drawable/gradient_background_lists"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.94"
-            app:layout_constraintWidth_percent="0.9" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/side_bars_database_select"
-            style="@style/PercentageStyle"
+            style="@style/PercentageStyleHeight"
+            android:layout_width="match_parent"
             android:alpha="0"
             android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="@+id/dbNamesList"
-            app:layout_constraintStart_toStartOf="@+id/dbNamesList"
-            app:layout_constraintTop_toTopOf="@+id/dbNamesList"
             app:layout_constraintEnd_toEndOf="@+id/dbNamesList"
             app:layout_constraintHeight_percent="0.94"
-            app:layout_constraintWidth_percent="0.90"
+            app:layout_constraintStart_toStartOf="@+id/dbNamesList"
+            app:layout_constraintTop_toTopOf="@+id/dbNamesList"
             app:srcCompat="@drawable/side_bars" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -131,8 +134,8 @@
             android:layout_width="wrap_content"
             style="@style/PercentageStyleHeight"
             android:background="@drawable/gradient_background_buttons_secundary"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
             android:text="New Budget"
             android:textColor="@color/textColor"
             app:layout_constraintBottom_toTopOf="@+id/totalSelectDbTextView"
