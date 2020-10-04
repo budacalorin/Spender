@@ -7,7 +7,6 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.os.Build;
 
-import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 
 import com.example.dayplanner.R;
@@ -26,11 +25,9 @@ public class NotificationHelper extends ContextWrapper {
 
     public NotificationHelper(Context base) {
         super(base);
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
-            createChannels();
+        createChannels();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     public void  createChannels()
     {
         NotificationChannel channel1 = new NotificationChannel(channel1ID, channel1Name, NotificationManager.IMPORTANCE_DEFAULT);

@@ -14,7 +14,6 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
@@ -66,8 +65,7 @@ public class Alarm extends AppCompatActivity implements TimePickerDialog.OnTimeS
         c.set(Calendar.SECOND, 0);
 
         updateTimeText(c);
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
-            startAlarm(c);
+        startAlarm(c);
     }
 
     private void updateTimeText(Calendar c)
@@ -78,7 +76,6 @@ public class Alarm extends AppCompatActivity implements TimePickerDialog.OnTimeS
         mTextView.setText(timeText);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     private void startAlarm(Calendar c)
     {
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);

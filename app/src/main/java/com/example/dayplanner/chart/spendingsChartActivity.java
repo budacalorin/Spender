@@ -84,15 +84,12 @@ public class spendingsChartActivity extends AppCompatActivity {
 
         updateTotal(list);
 
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            Color color = Color.valueOf(getColor(R.color.colorPrimaryDark));
-            String hexColor = String.format("#%06X", (0xFFFFFF & color.toArgb()));
+        Color color = Color.valueOf(getColor(R.color.colorPrimaryDark));
+        String hexColor = String.format("#%06X", (0xFFFFFF & color.toArgb()));
 
-            pie.background().fill(hexColor, 0);
+        pie.background().fill(hexColor, 0);
 
-            anyChartView.setBackgroundColor(hexColor);
-        }
-
+        anyChartView.setBackgroundColor(hexColor);
 
         pie.title(dbName);
         pie.fill("aquastyle");

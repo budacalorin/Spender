@@ -75,14 +75,12 @@ public class AllChartActivity extends AppCompatActivity {
     private void initializePie() {
         updatePie(begin, end);
 
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            Color color = Color.valueOf(getColor(R.color.colorPrimaryDark));
-            String hexColor = String.format("#%06X", (0xFFFFFF & color.toArgb()));
+        Color color = null;
+        color = Color.valueOf(getColor(R.color.colorPrimaryDark));
+        String hexColor = String.format("#%06X", (0xFFFFFF & color.toArgb()));
 
-            pie.background().fill(hexColor, 0);
-
-            chartView.setBackgroundColor(hexColor);
-        }
+        pie.background().fill(hexColor, 0);
+        chartView.setBackgroundColor(hexColor);
 
         pie.title("All expenses");
         pie.fill("aquastyle");

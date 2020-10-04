@@ -419,31 +419,30 @@ public class spender extends AppCompatActivity {
 
     private void update_sort_date(){
         if (sortDate.isChecked()){
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                items.sort(new Comparator<itemInList>() {
-                    @Override
-                    public int compare(itemInList o1, itemInList o2) {
-                        String[] d1 = o1.date.split("/");
-                        String[] d2 = o2.date.split("/");
-                        if (Integer.parseInt(d1[2])!=Integer.parseInt(d2[2]))
-                            if (Integer.parseInt(d1[2])<Integer.parseInt(d2[2]))
-                                return -1;
-                            else
-                                return 1;
-                        if (Integer.parseInt(d1[1])!=Integer.parseInt(d2[1]))
-                            if (Integer.parseInt(d1[1])<Integer.parseInt(d2[1]))
-                                return -1;
-                            else
-                                return 1;
-                        if (Integer.parseInt(d1[0])!=Integer.parseInt(d2[0]))
-                            if (Integer.parseInt(d1[0])<Integer.parseInt(d2[0]))
-                                return -1;
-                            else
-                                return 1;
-                        return 0;
-                    }
-                });
-            }
+            items.sort(new Comparator<itemInList>() {
+                @Override
+                public int compare(itemInList o1, itemInList o2) {
+                    String[] d1 = o1.date.split("/");
+                    String[] d2 = o2.date.split("/");
+                    if (Integer.parseInt(d1[2])!=Integer.parseInt(d2[2]))
+                        if (Integer.parseInt(d1[2])<Integer.parseInt(d2[2]))
+                            return -1;
+                        else
+                            return 1;
+                    if (Integer.parseInt(d1[1])!=Integer.parseInt(d2[1]))
+                        if (Integer.parseInt(d1[1])<Integer.parseInt(d2[1]))
+                            return -1;
+                        else
+                            return 1;
+                    if (Integer.parseInt(d1[0])!=Integer.parseInt(d2[0]))
+                        if (Integer.parseInt(d1[0])<Integer.parseInt(d2[0]))
+                            return -1;
+                        else
+                            return 1;
+                    return 0;
+                }
+            });
+
             itemAdapter.notifyDataSetChanged();
         } else {
             initialiseDb();

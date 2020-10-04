@@ -13,7 +13,6 @@ import android.widget.BaseAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
 
 import com.anychart.enums.BackgroundCornersType;
@@ -57,7 +56,6 @@ public class myAdapterSpender extends BaseAdapter {
         return list.get(position).id;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View v;
@@ -92,18 +90,17 @@ public class myAdapterSpender extends BaseAdapter {
         double val = list.get(position).value;
         boolean income = val > 0;
 
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            Color color = Color.valueOf(context.getColor(R.color.colorListEntry));
+        Color color = Color.valueOf(context.getColor(R.color.colorListEntry));
 
-            if (income) {
-                float green = (val == 0) ? 0 : (float) (color.green() + (color.green() * (val / maximIncome)));
-                rel.getBackground().setTint(Color.argb(color.alpha(), color.red(), green, color.blue()));
-            }
-            else {
-                float red = (val==0) ? 0 : (float) (color.red() + (color.red() * (val / maximExpence)));
-                rel.getBackground().setTint(Color.argb(color.alpha(), red, color.green(), color.blue()));
-            }
+        if (income) {
+            float green = (val == 0) ? 0 : (float) (color.green() + (color.green() * (val / maximIncome)));
+            rel.getBackground().setTint(Color.argb(color.alpha(), color.red(), green, color.blue()));
         }
+        else {
+            float red = (val==0) ? 0 : (float) (color.red() + (color.red() * (val / maximExpence)));
+            rel.getBackground().setTint(Color.argb(color.alpha(), red, color.green(), color.blue()));
+        }
+
         return v;
     }
 
